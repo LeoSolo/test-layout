@@ -5,18 +5,18 @@ let splashScreen = {
   splashScreen: document.getElementsByClassName('splashScreen')[0],
   speed: 20,
   start: function() {
-      let interval = setInterval(() => {
-        this.progress += 1;
-        this.progress === 100 && (
+      let interval = setInterval(function() {
+        splashScreen.progress += 1;
+        splashScreen.progress === 100 && (
             clearInterval(interval),
-            this.splashScreen.style.opacity = 0,
-            setTimeout(()=> {
-                this.splashScreen.style.display = 'none'
+            splashScreen.splashScreen.style.opacity = 0,
+            setTimeout(function() {
+                splashScreen.splashScreen.style.display = 'none'
             }, 300)
         );
-        this.count.innerHTML = this.progress + '%';
-        this.bar.style.height = this.progress + '%';
-      }, this.speed);
+        splashScreen.count.innerHTML = splashScreen.progress + '%';
+        splashScreen.bar.style.height = splashScreen.progress + '%';
+      }, splashScreen.speed);
   }
 };
 
@@ -46,7 +46,7 @@ let localization = {
               break;
       }
       e.target.innerHTML = LANG;
-      this.localize();
+      localization.localize();
   }
 };
 
@@ -64,10 +64,10 @@ closeMenuBtn.addEventListener('click', function() {
 let menu = {
     menuContainer: document.getElementsByClassName('menuContainer')[0],
     trigger: function() {
-        Array.from(this.menuContainer.classList).indexOf('opened') === -1 ?
-            this.menuContainer.classList.add('opened')
+        menu.menuContainer.classList.contains('opened') ?
+            menu.menuContainer.classList.remove('opened')
             :
-            this.menuContainer.classList.remove('opened')
+            menu.menuContainer.classList.add('opened')
     }
 };
 

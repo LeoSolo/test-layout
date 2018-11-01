@@ -157,6 +157,7 @@ html {
 .menuContainer ul {
   position: relative;
   top: 50px;
+  list-style-type: none;
 }
 .menuContainer ul li {
   width: 250px;
@@ -244,6 +245,7 @@ section.headerSection .textColumn .logo {
   }
 }
 section.headerSection .textColumn .content {
+  width: 100%;
   padding: 0 40px 0 40px;
 }
 section.headerSection .textColumn .content h1 {
